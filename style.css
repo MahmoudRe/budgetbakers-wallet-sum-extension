@@ -1,6 +1,10 @@
-.custom-sum-element {
+.custom-sum-element span {
     padding: 0.4rem;
     background: #eff0f2;
     border-radius: 5px;
-    margin-right: 1rem;
+    margin-right: .5rem;
+}
+
+.custom-sum-element {
+    margin-right: .5rem;
 }
