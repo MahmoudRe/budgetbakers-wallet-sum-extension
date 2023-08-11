@@ -43,7 +43,7 @@ function tryRender() {
             document.querySelector('a[href*="records"]')
                 .addEventListener('click', () => setTimeout(renderAndAddEvent, 200))
 
-            document.addEventListener("scrollend", () => location.pathname == "/records" && renderSumEl);
+            document.addEventListener("scrollend", () => location.pathname == "/records" && renderSumEl());
         } 
         catch(e) {
             tryRender()
