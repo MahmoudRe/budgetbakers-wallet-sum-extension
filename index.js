@@ -25,6 +25,12 @@ function renderSumEl() {
     document.querySelector(".custom-sum-element").innerHTML = res
 }
 
+function renderAndAddEvent() {
+    renderSumEl()
+    document.querySelector("#root > div > div > main > div > div:last-child > div:first-child")
+        .addEventListener('click', () => setTimeout(renderSumEl, 200))
+}
+
 let trial = 0;
 function tryRender() {
     ++trial
@@ -32,11 +38,14 @@ function tryRender() {
 
     setTimeout(() => {
         try {
-            renderSumEl()
-            document.querySelector("#root > div > div > main > div > div:last-child > div:first-child")
-                .addEventListener('click', () => setTimeout(renderSumEl, 200))
-            document.addEventListener("scrollend", renderSumEl);
-        } catch(e) {
+            if(location.pathname == "/records") renderAndAddEvent()
+
+            document.querySelector('a[href*="records"]')
+                .addEventListener('click', () => setTimeout(renderAndAddEvent, 200))
+
+            document.addEventListener("scrollend", () => location.pathname == "/records" && renderSumEl);
+        } 
+        catch(e) {
             tryRender()
             console.log('Wallet extension trial: ', trial)
         }

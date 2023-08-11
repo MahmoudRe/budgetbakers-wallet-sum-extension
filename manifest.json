@@ -29,7 +29,7 @@
     },
     "content_scripts": [{
             "matches": [
-                "https://web.budgetbakers.com/records"
+                "https://web.budgetbakers.com/*"
             ],
             "run_at": "document_start",
             "all_frames": true,
