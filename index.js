@@ -28,7 +28,7 @@ function renderSumEl() {
 function renderAndAddEvent() {
     renderSumEl()
     document.querySelector("#root > div > div > main > div > div:last-child > div:first-child")
-        .addEventListener('click', () => setTimeout(renderSumEl, 200))
+        .addEventListener('click', () => setTimeout(() => location.pathname == "/records" && renderSumEl(), 200))
 }
 
 let trial = 0;
